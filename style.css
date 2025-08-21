@@ -607,7 +607,6 @@ a:hover { color: var(--color-primary-hover); }
     font-size: var(--font-size-sm);
 }
 
-/* Enhanced Hero Section Profile Image */
 .profile-image-container {
     position: relative;
     width: 280px;
@@ -624,7 +623,7 @@ a:hover { color: var(--color-primary-hover); }
     transition: all var(--duration-normal);
     position: relative;
     z-index: 3;
-    opacity: 0;
+    opacity: 1;
 }
 
 .profile-image.loaded,
@@ -633,7 +632,7 @@ a:hover { color: var(--color-primary-hover); }
 }
 
 .profile-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     border-color: var(--color-primary-hover);
 }
 
@@ -703,18 +702,6 @@ a:hover { color: var(--color-primary-hover); }
     opacity: 0.3;
     animation: rotate 10s linear infinite;
     z-index: 1;
-}
-
-.profile-border-2 {
-    position: absolute;
-    top: -25px;
-    left: -25px;
-    right: -25px;
-    bottom: -25px;
-    border: 1px solid rgba(var(--color-primary-rgb), 0.3);
-    border-radius: 50%;
-    animation: rotate 15s linear infinite reverse;
-    z-index: 0;
 }
 
 .profile-glow {

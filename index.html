@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaimin Chandarana - Data Analyst</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.2.6/dist/framer-motion.js"></script>
+</head>
+<body>
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <h2>JC</h2>
+            </div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h3>Jaimin Chandarana</h3>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <a href="./LDCE_MCA_JAIMIN_CHANDARANA_RESUME.pdf" class="btn btn--primary nav-resume-btn" target="_blank" rel="noopener">
+                    Download Resume
+                </a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>  
+
+    <!-- Hero/About Section -->
+    <section id="about" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" id="hero-text">
+                    <h1 class="hero-title" id="hero-title">Jaimin Chandarana</h1>
+                    <h2 class="hero-subtitle" id="hero-subtitle">Data Analyst</h2>
+                    <p class="hero-description" id="hero-description">Data-driven analyst with expertise in predictive analytics and data visualization. I love discovering patterns in data and turning insights into strategic business solutions.</p>
+                    <div class="hero-buttons" id="hero-buttons">
+                        <a href="#projects" class="btn btn--primary">View Projects</a>
+                        <a href="#contact" class="btn btn--outline">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image" id="hero-image">
+                    <div class="profile-image-container">
+                        <img src="./Jaimin%20Chandarana.jpg" alt="Jaimin Chandarana - Data Analyst" class="profile-image" id="profile-img">
+                        <div class="profile-placeholder" id="profile-placeholder">
+                            <img src="./Jaimin%20Chandarana.jpg" alt="Jaimin Chandarana - Data Analyst" class="profile-image" id="profile-img">
+                        </div>
+                        <div class="profile-border-1"></div>
+                        <div class="profile-border-2"></div>
+                        <div class="profile-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            
+            <div class="skills-category">
+                <h3 class="category-title">Programming & Web</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fab fa-python"></i>
+                        <h4>Python</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fab fa-js-square"></i>
+                        <h4>JavaScript</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fab fa-html5"></i>
+                        <h4>HTML</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fab fa-css3-alt"></i>
+                        <h4>CSS</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="category-title">Libraries</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-table"></i>
+                        <h4>Pandas</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-square-root-alt"></i>
+                        <h4>NumPy</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-project-diagram"></i>
+                        <h4>Skicit-Learn</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Matplotlib</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="category-title">Analytics & Visualization</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-chart-bar"></i>
+                        <h4>Power BI</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-chart-pie"></i>
+                        <h4>Tablue</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-chart-area"></i>
+                        <h4>Looker studio</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-file-excel"></i>
+                        <h4>Excel</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="category-title">Databases</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-database"></i>
+                        <h4>PostgreSQL</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-server"></i>
+                        <h4>BigQuery</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-leaf"></i>
+                        <h4>MongoDB</h4>
+                    </div>
+                    <div class="skill-card" data-animate="fade-up">
+                        <i class="fas fa-table"></i>
+                        <h4>MySql</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-timeline">
+                <div class="experience-card" data-animate="fade-up">
+                    <div class="experience-header">
+                        <div class="role-info">
+                            <h3 class="role-title">Data Analyst</h3>
+                            <div class="company-info">
+                                <span class="company-name">Solomo360 Technologies</span>
+                                <a href="./Jaimin_Experience_Letter.jpg" class="company-link" target="_blank" rel="noopener">(view)</a>
+                            </div>
+                        </div>
+                        <div class="duration">
+                            <span class="dates">Nov 2021 - May 2022</span>
+                            <span class="period">7 months</span>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-content">
+                        <p class="role-summary">
+                            Led comprehensive data analytics initiatives from requirement gathering to insight delivery, 
+                            specializing in data integration, visualization, and KPI development for strategic business decision-making.
+                        </p>
+                        
+                        <ul class="responsibilities">
+                            <li>
+                                <i class="fas fa-search-plus"></i>
+                                <span>Conducted thorough requirement analysis and translated business needs into technical specifications for data integration, cleaning, and visualization projects</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-chart-line"></i>
+                                <span>Designed and developed comprehensive KPI reports and interactive dashboards using advanced formulas and DAX queries to deliver actionable business insights</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-database"></i>
+                                <span>Leveraged PostgreSQL and BigQuery to efficiently extract, transform, and manipulate large datasets for reporting and analysis purposes</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="tech-stack">
+                            <h4>Technologies Used:</h4>
+                            <div class="tech-badges">
+                                <span class="tech-badge">PostgreSQL</span>
+                                <span class="tech-badge">BigQuery</span>
+                                <span class="tech-badge">SQL</span>
+                                <span class="tech-badge">DAX</span>
+                                <span class="tech-badge">Power BI</span>
+                                <span class="tech-badge">Excel</span>
+                                <span class="tech-badge">ETL</span>
+                                <span class="tech-badge">Data Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <span>All Projects</span>
+                </button>
+                <button class="filter-btn" data-filter="python">
+                    <span>Python</span>
+                </button>
+                <button class="filter-btn" data-filter="javascript">
+                    <span>JavaScript</span>
+                </button>
+                <button class="filter-btn" data-filter="react">
+                    <span>React</span>
+                </button>
+                <button class="filter-btn" data-filter="machine-learning">
+                    <span>Machine Learning</span>
+                </button>
+            </div>
+            
+            <div class="projects-grid" id="projects-grid">
+                <div class="project-card" data-category="react" data-animate="fade-up">
+                    <div class="project-header">
+                        <h3>E-Commerce Platform</h3>
+                        <a href="https://github.com/jaiminchandarana/ecommerce-platform" class="project-github" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">
+                        Full-stack e-commerce solution with user authentication, payment integration, and admin dashboard. Built with modern web technologies.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="python" data-animate="fade-up">
+                    <div class="project-header">
+                        <h3>Machine Learning Stock Predictor</h3>
+                        <a href="https://github.com/jaiminchandarana/stock-predictor" class="project-github" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">
+                        Predictive model for stock prices using LSTM neural networks and real-time data analysis. Includes web dashboard for visualization.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="javascript" data-animate="fade-up">
+                    <div class="project-header">
+                        <h3>Task Management API</h3>
+                        <a href="https://github.com/jaiminchandarana/task-api" class="project-github" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">
+                        RESTful API for task management with authentication, CRUD operations, and real-time notifications. Comprehensive documentation included.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="react" data-animate="fade-up">
+                    <div class="project-header">
+                        <h3>Data Visualization Dashboard</h3>
+                        <a href="https://github.com/jaiminchandarana/data-dashboard" class="project-github" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">
+                        Interactive dashboard for business analytics with real-time charts, filters, and export functionality. Clean and intuitive design.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="machine-learning" data-animate="fade-up">
+                    <div class="project-header">
+                        <h3>AI Chatbot Assistant</h3>
+                        <a href="https://github.com/jaiminchandarana/ai-chatbot" class="project-github" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">
+                        Intelligent chatbot using natural language processing for customer support. Includes sentiment analysis and automated responses.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="javascript" data-animate="fade-up">
+                    <div class="project-header">
+                        <h3>Weather App</h3>
+                        <a href="https://github.com/jaiminchandarana/weather-app" class="project-github" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">
+                        Responsive weather application with location detection, 7-day forecast, and beautiful UI. Includes weather alerts and favorites.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">API Integration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-content">
+                <div class="contact-form-container" data-animate="fade-up">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-field">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary form-submit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-info" data-animate="fade-up">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>7490824904</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>chandaranajaimin@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-location-dot"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Ahmedabad, Gujarat, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://linkedin.com/in/jaiminchandarana" target="_blank" rel="noopener">linkedin.com/in/jaiminchandarana</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/jaiminchandarana" target="_blank" rel="noopener">github.com/jaiminchandarana</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; <span id="current-year"></span> Jaimin Chandarana. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/jaiminchandarana" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/jaiminchandarana" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

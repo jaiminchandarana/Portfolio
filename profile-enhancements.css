@@ -737,9 +737,6 @@ select.form-control {
     format('woff2');
 }
 
-/* END PERPLEXITY DESIGN SYSTEM */
-```css
-/* Enhanced Resume Button Styling */
 .nav-resume-btn {
     display: flex;
     align-items: center;
@@ -1053,4 +1050,3 @@ select.form-control {
 [data-color-scheme="light"] .profile-glow {
     background: radial-gradient(circle, rgba(var(--color-teal-500-rgb), 0.1) 0%, transparent 70%);
 }
-```

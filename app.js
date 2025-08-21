@@ -1,5 +1,3 @@
-// Enhanced Portfolio Website with Framer Motion and Theme Toggle
-
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize theme
     initializeTheme();
@@ -82,29 +80,21 @@ document.addEventListener('DOMContentLoaded', function() {
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
-            
-            // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
-            // Animate filter change
             animateProjectFilter(filter, projectCards);
         });
     });
 
-    // Contact Form Handling
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Get form data
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
         const phone = formData.get('phone');
         const message = formData.get('message');
-        
-        // Basic form validation
+
         if (!name || !email || !message) {
             showNotification('Please fill in all required fields.', 'error');
             return;
@@ -115,17 +105,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Animate form submission
         animateFormSubmission();
-        
-        // Simulate form submission
         showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-        
-        // Reset form
         this.reset();
     });
 
-    // Theme Toggle Functionality
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
@@ -267,8 +251,8 @@ function initializeLoadingScreen() {
 
 // Enhanced Animations
 function initializeAnimations() {
-    if (typeof Motion === 'undefined') {
-        console.warn('Framer Motion not loaded, using CSS fallbacks');
+    if (typeof motion === 'undefined') {
+        console.warn('Framer motion not loaded, using CSS fallbacks');
         initializeFallbackAnimations();
         return;
     }
@@ -281,7 +265,7 @@ function initializeAnimations() {
 }
 
 function animateHeroSection() {
-    if (typeof Motion === 'undefined') return;
+    if (typeof motion === 'undefined') return;
 
     const heroTitle = document.getElementById('hero-title');
     const heroSubtitle = document.getElementById('hero-subtitle');
@@ -292,7 +276,7 @@ function animateHeroSection() {
     const heroElements = [heroTitle, heroSubtitle, heroDescription, heroButtons];
     heroElements.forEach((element, index) => {
         if (element) {
-            Motion.animate(element, {
+            motion.animate(element, {
                 opacity: [0, 1],
                 y: [30, 0]
             }, {
@@ -304,7 +288,7 @@ function animateHeroSection() {
     });
 
     if (heroImage) {
-        Motion.animate(heroImage, {
+        motion.animate(heroImage, {
             opacity: [0, 1],
             scale: [0.8, 1],
             rotate: [5, 0]
@@ -317,7 +301,7 @@ function animateHeroSection() {
 }
 
 function animateSkillsSection() {
-    if (typeof Motion === 'undefined') return;
+    if (typeof motion === 'undefined') return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -325,7 +309,7 @@ function animateSkillsSection() {
                 const grid = entry.target;
                 const cards = grid.querySelectorAll('.skill-card');
                 cards.forEach((card, index) => {
-                    Motion.animate(card, {
+                    motion.animate(card, {
                         opacity: [0, 1],
                         y: [40, 0],
                         scale: [0.9, 1]
@@ -346,14 +330,14 @@ function animateSkillsSection() {
 }
 
 function animateExperienceSection() {
-    if (typeof Motion === 'undefined') return;
+    if (typeof motion === 'undefined') return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const cards = entry.target.querySelectorAll('.experience-card');
                 cards.forEach((card, index) => {
-                    Motion.animate(card, {
+                    motion.animate(card, {
                         opacity: [0, 1],
                         y: [50, 0],
                         scale: [0.95, 1]
@@ -367,7 +351,7 @@ function animateExperienceSection() {
                     setTimeout(() => {
                         const responsibilities = card.querySelectorAll('.responsibilities li');
                         responsibilities.forEach((item, itemIndex) => {
-                            Motion.animate(item, {
+                            motion.animate(item, {
                                 opacity: [0, 1],
                                 x: [-20, 0]
                             }, {
@@ -380,7 +364,7 @@ function animateExperienceSection() {
                         // Animate tech badges
                         const techBadges = card.querySelectorAll('.tech-badge');
                         techBadges.forEach((badge, badgeIndex) => {
-                            Motion.animate(badge, {
+                            motion.animate(badge, {
                                 opacity: [0, 1],
                                 scale: [0.8, 1]
                             }, {
@@ -403,14 +387,14 @@ function animateExperienceSection() {
 }
 
 function animateProjectsSection() {
-    if (typeof Motion === 'undefined') return;
+    if (typeof motion === 'undefined') return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const cards = entry.target.querySelectorAll('.project-card');
                 cards.forEach((card, index) => {
-                    Motion.animate(card, {
+                    motion.animate(card, {
                         opacity: [0, 1],
                         y: [50, 0],
                         rotateX: [15, 0]
@@ -432,14 +416,14 @@ function animateProjectsSection() {
 }
 
 function animateContactSection() {
-    if (typeof Motion === 'undefined') return;
+    if (typeof motion === 'undefined') return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const formFields = document.querySelectorAll('.form-field');
                 formFields.forEach((field, index) => {
-                    Motion.animate(field, {
+                    motion.animate(field, {
                         opacity: [0, 1],
                         x: [-30, 0]
                     }, {
@@ -451,7 +435,7 @@ function animateContactSection() {
 
                 const contactItems = document.querySelectorAll('.contact-item');
                 contactItems.forEach((item, index) => {
-                    Motion.animate(item, {
+                    motion.animate(item, {
                         opacity: [0, 1],
                         x: [30, 0]
                     }, {
@@ -491,8 +475,8 @@ function initializeHoverAnimations() {
     const skillCards = document.querySelectorAll('.skill-card');
     skillCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            if (typeof Motion !== 'undefined') {
-                Motion.animate(this, {
+            if (typeof motion !== 'undefined') {
+                motion.animate(this, {
                     y: -8,
                     scale: 1.02
                 }, {
@@ -503,8 +487,8 @@ function initializeHoverAnimations() {
         });
 
         card.addEventListener('mouseleave', function() {
-            if (typeof Motion !== 'undefined') {
-                Motion.animate(this, {
+            if (typeof motion !== 'undefined') {
+                motion.animate(this, {
                     y: 0,
                     scale: 1
                 }, {
@@ -518,8 +502,8 @@ function initializeHoverAnimations() {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            if (typeof Motion !== 'undefined') {
-                Motion.animate(this, {
+            if (typeof motion !== 'undefined') {
+                motion.animate(this, {
                     y: -8,
                     scale: 1.01
                 }, {
@@ -530,8 +514,8 @@ function initializeHoverAnimations() {
         });
 
         card.addEventListener('mouseleave', function() {
-            if (typeof Motion !== 'undefined') {
-                Motion.animate(this, {
+            if (typeof motion !== 'undefined') {
+                motion.animate(this, {
                     y: 0,
                     scale: 1
                 }, {
@@ -545,8 +529,8 @@ function initializeHoverAnimations() {
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {
         button.addEventListener('mouseenter', function() {
-            if (typeof Motion !== 'undefined') {
-                Motion.animate(this, {
+            if (typeof motion !== 'undefined') {
+                motion.animate(this, {
                     y: -2,
                     scale: 1.02
                 }, {
@@ -557,8 +541,8 @@ function initializeHoverAnimations() {
         });
 
         button.addEventListener('mouseleave', function() {
-            if (typeof Motion !== 'undefined') {
-                Motion.animate(this, {
+            if (typeof motion !== 'undefined') {
+                motion.animate(this, {
                     y: 0,
                     scale: 1
                 }, {
@@ -575,8 +559,8 @@ function animateNavMenu(isOpen) {
     const navLinks = document.querySelectorAll('.nav-menu .nav-link');
     if (isOpen) {
         navLinks.forEach((link, index) => {
-            if (typeof Motion !== 'undefined') {
-                Motion.animate(link, {
+            if (typeof motion !== 'undefined') {
+                motion.animate(link, {
                     opacity: [0, 1],
                     x: [-20, 0]
                 }, {
@@ -594,10 +578,10 @@ function animateProjectFilter(filter, projectCards) {
         const category = card.getAttribute('data-category');
         const shouldShow = filter === 'all' || category === filter;
 
-        if (typeof Motion !== 'undefined') {
+        if (typeof motion !== 'undefined') {
             if (shouldShow) {
                 card.style.display = 'block';
-                Motion.animate(card, {
+                motion.animate(card, {
                     opacity: [0, 1],
                     scale: [0.9, 1],
                     y: [20, 0]
@@ -607,7 +591,7 @@ function animateProjectFilter(filter, projectCards) {
                     ease: [0.16, 1, 0.3, 1]
                 });
             } else {
-                Motion.animate(card, {
+                motion.animate(card, {
                     opacity: [1, 0],
                     scale: [1, 0.9],
                     y: [0, -20]
@@ -632,23 +616,22 @@ function animateProjectFilter(filter, projectCards) {
 
 function animateFormSubmission() {
     const submitButton = document.querySelector('.form-submit');
-    if (typeof Motion !== 'undefined' && submitButton) {
-        Motion.animate(submitButton, {
+    if (typeof motion !== 'undefined' && submitButton) {
+        motion.animate(submitButton, {
             scale: [1, 0.95, 1]
         }, {
             duration: 0.3,
-            ease: [0.16, 1, 0.3, 1]
+            easing: [0.16, 1, 0.3, 1]
         });
     }
 }
 
-// Scroll Animations
 function initializeScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                if (typeof Motion !== 'undefined') {
-                    Motion.animate(entry.target, {
+                if (typeof motion !== 'undefined') {
+                    motion.animate(entry.target, {
                         opacity: [0, 1],
                         y: [30, 0]
                     }, {
@@ -671,7 +654,6 @@ function initializeScrollAnimations() {
     });
 }
 
-// Scroll Handler
 function handleScroll() {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
@@ -782,5 +764,3 @@ function showNotification(message, type = 'info') {
         }
     }, 5000);
 }
-
-console.log('Enhanced Portfolio website loaded successfully! ✨');

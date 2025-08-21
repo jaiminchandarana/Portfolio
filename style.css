@@ -215,7 +215,6 @@ a {
 
 a:hover { color: var(--color-primary-hover); }
 
-/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -295,7 +294,6 @@ a:hover { color: var(--color-primary-hover); }
 
 .form-group { margin-bottom: var(--space-16); }
 
-/* Container layout */
 .container {
     width: 100%;
     margin: 0 auto;
@@ -307,7 +305,6 @@ a:hover { color: var(--color-primary-hover); }
 @media (min-width: 1024px) { .container { max-width: var(--container-lg); } }
 @media (min-width: 1280px) { .container { max-width: var(--container-xl); } }
 
-/* Loading Screen */
 .loading-screen {
     position: fixed;
     top: 0;
@@ -363,7 +360,6 @@ a:hover { color: var(--color-primary-hover); }
     50% { transform: scale(1.1); }
 }
 
-/* Theme Toggle */
 .theme-toggle {
     background: var(--color-secondary);
     border: 1px solid var(--color-border);
@@ -393,7 +389,6 @@ a:hover { color: var(--color-primary-hover); }
     transform: rotate(20deg);
 }
 
-/* Enhanced Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -463,7 +458,6 @@ a:hover { color: var(--color-primary-hover); }
     left: 0;
 }
 
-/* Enhanced Resume Button Styling */
 .nav-resume-btn {
     display: flex;
     align-items: center;
@@ -492,6 +486,7 @@ a:hover { color: var(--color-primary-hover); }
 .nav-resume-btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    color: var(--color-white);
 }
 
 .nav-resume-btn i {
@@ -514,7 +509,6 @@ a:hover { color: var(--color-primary-hover); }
     border-radius: var(--radius-sm);
 }
 
-/* Enhanced Hero Section */
 .hero {
     padding: 120px 0 var(--space-32);
     background: linear-gradient(135deg, var(--color-bg-1), var(--color-bg-2));
@@ -570,7 +564,6 @@ a:hover { color: var(--color-primary-hover); }
     line-height: var(--line-height-normal);
 }
 
-/* Enhanced Hero Buttons */
 .hero-buttons {
     display: flex;
     gap: var(--space-16);
@@ -585,6 +578,11 @@ a:hover { color: var(--color-primary-hover); }
     position: relative;
     overflow: hidden;
 }
+
+.hero-buttons .btn:first-child:hover {
+    color: var(--color-white); 
+}
+
 
 .hero-buttons .btn:hover {
     transform: translateY(-3px);
@@ -633,7 +631,12 @@ a:hover { color: var(--color-primary-hover); }
 
 .profile-image:hover {
     transform: scale(1.02);
-    border-color: var(--color-primary-hover);
+    border-color: var(--color-primary);
+    transition: all 0.4s ease;
+}
+
+.profile-image:hover ~ .profile-placeholder {
+    transform: scale(1.02);
     transition: all 0.4s ease;
 }
 
@@ -642,13 +645,6 @@ a:hover { color: var(--color-primary-hover); }
     opacity: 1;                
     transition: all 0.4s ease;
 }
-
-.profile-image:hover ~ .profile-placeholder {
-    transform: scale(1.02);
-    border-color: var(--color-primary-hover);
-    transition: all 0.4s ease;
-}
-
 
 .profile-placeholder {
     width: 100%;
@@ -1358,7 +1354,6 @@ a:hover { color: var(--color-primary-hover); }
     transform: translateY(-3px);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;

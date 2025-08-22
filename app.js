@@ -1,19 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize theme
     initializeTheme();
-    
-    // Initialize loading screen
     initializeLoadingScreen();
-    
-    // Initialize profile image handling
     initializeProfileImage();
     
-    // Initialize animations after a short delay
     setTimeout(() => {
         initializeAnimations();
     }, 1500);
     
-    // Mobile Navigation Toggle
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -27,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close mobile menu when clicking on a link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
@@ -35,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth Scrolling for Navigation Links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -49,13 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth'
                 });
                 
-                // Update active nav link
                 updateActiveNavLink(this);
             }
         });
     });
 
-    // Hero Section Button Smooth Scrolling
     const heroButtons = document.querySelectorAll('.hero-buttons a[href^="#"]');
     heroButtons.forEach(button => {
         button.addEventListener('click', function(e) {
@@ -73,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Project Filtering with enhanced animations
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -101,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address.', 'error');
+            showNotification('Please enter a legit email address.', 'error');
             return;
         }
         
@@ -117,10 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Navbar Background on Scroll
     window.addEventListener('scroll', handleScroll);
 
-    // Active Navigation Link on Scroll
     const sections = document.querySelectorAll('section[id]');
     window.addEventListener('scroll', function() {
         updateActiveNavOnScroll(sections, navLinks);
@@ -575,8 +561,8 @@ function animateNavMenu(isOpen) {
 
 function animateProjectFilter(filter, projectCards) {
     projectCards.forEach((card, index) => {
-        const category = card.getAttribute('data-category');
-        const shouldShow = filter === 'all' || category === filter;
+        const categories = card.getAttribute('data-category').split(",").map(c => c.trim());
+        const shouldShow = filter === 'all' || categories.includes(filter);
 
         if (typeof motion !== 'undefined') {
             if (shouldShow) {
@@ -613,6 +599,7 @@ function animateProjectFilter(filter, projectCards) {
         }
     });
 }
+
 
 function animateFormSubmission() {
     const submitButton = document.querySelector('.form-submit');

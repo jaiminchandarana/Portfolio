@@ -1027,7 +1027,6 @@ a:hover { color: var(--color-primary-hover); }
     box-shadow: var(--shadow-sm);
 }
 
-/* Projects Section */
 .projects-section {
     padding: var(--space-32) 0;
     background: linear-gradient(135deg, var(--color-bg-3), var(--color-bg-4));
@@ -1149,9 +1148,23 @@ a:hover { color: var(--color-primary-hover); }
     border-radius: var(--radius-base);
 }
 
+.project-app {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xl);
+    transition: all var(--duration-fast);
+    padding: var(--space-8);
+    border-radius: var(--radius-base);
+}
+
 .project-github:hover {
     color: var(--color-primary);
     background: var(--color-secondary);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.project-app:hover {
+    color: var(--color-primary);
+    background: var(--color-accent);
     transform: scale(1.1) rotate(5deg);
 }
 

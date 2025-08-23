@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         try {
-            const response = await fetch("http://localhost:5000/send_inquiry", {
+            const response = await fetch("https://portfolio-cmar.onrender.com/send_inquiry", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, phone, email, message }),

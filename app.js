@@ -75,8 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
@@ -92,11 +93,28 @@ document.addEventListener('DOMContentLoaded', function() {
             showNotification('Please enter a legit email address.', 'error');
             return;
         }
-        
-        animateFormSubmission();
-        showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-        this.reset();
+
+        try {
+            const response = await fetch("http://localhost:5000/send_inquiry", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, phone, email, message }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                animateFormSubmission();
+                showNotification('Inquiry sent successfully.', 'success');
+                this.reset();
+            } else {
+                showNotification(result.message, 'error');
+            }
+        } catch (error) {
+            showNotification(error.message, 'error');
+        }
     });
+
 
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {

@@ -1,12 +1,13 @@
-# backend.py
 from flask import Flask, request, jsonify
 import yagmail, os
 from dotenv import load_dotenv
+from flask_cors import CORS   # 👈 import CORS
 
 load_dotenv()
 app_password = os.getenv("APP_PASSWORD")
 
 app = Flask(__name__)
+CORS(app)   # 👈 enable CORS for all routes
 
 @app.route("/send_inquiry", methods=["POST"])
 def send_inquiry():

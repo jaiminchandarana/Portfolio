@@ -1,17 +1,23 @@
 from flask import Flask, request, jsonify
 import yagmail, os
 from dotenv import load_dotenv
-from flask_cors import CORS   # 👈 import CORS
+from flask_cors import CORS
 
 load_dotenv()
 app_password = os.getenv("APP_PASSWORD")
 
 app = Flask(__name__)
-CORS(app)   # 👈 enable CORS for all routes
 
-@app.route("/send_inquiry", methods=["POST"])
+# ✅ Allow only your frontend domain (more secure than "*")
+CORS(app, origins=["https://jaiminchandaranaportfolio.vercel.app"])
+
+@app.route("/send_inquiry", methods=["POST", "OPTIONS"])
 def send_inquiry():
-    data = request.json
+    if request.method == "OPTIONS":
+        # Preflight request – Flask-CORS should handle it, but adding safety
+        return jsonify({"status": "OK"}), 200
+
+    data = request.get_json()
     name = data.get("name")
     phone = data.get("phone")
     email = data.get("email")
@@ -40,4 +46,5 @@ def send_inquiry():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)

@@ -8,13 +8,11 @@ app_password = os.getenv("APP_PASSWORD")
 
 app = Flask(__name__)
 
-# ✅ Allow only your frontend domain (more secure than "*")
 CORS(app, origins=["https://jaiminchandaranaportfolio.vercel.app"])
 
 @app.route("/send_inquiry", methods=["POST", "OPTIONS"])
 def send_inquiry():
     if request.method == "OPTIONS":
-        # Preflight request – Flask-CORS should handle it, but adding safety
         return jsonify({"status": "OK"}), 200
 
     data = request.get_json()

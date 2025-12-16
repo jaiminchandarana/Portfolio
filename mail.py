@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify
-import yagmail, os
+import yagmail
+import os
+import threading
 from dotenv import load_dotenv
 from flask_cors import CORS
 
@@ -8,23 +10,14 @@ app_password = os.getenv("APP_PASSWORD")
 
 app = Flask(__name__)
 
-CORS(app, origins=["https://jaiminchandaranaportfolio.vercel.app"])
+# Enable CORS for all routes and origins to avoid issues
+CORS(app, resources={r"/*": {"origins": "*"}})
 
-@app.route("/send_inquiry", methods=["POST", "OPTIONS"])
-def send_inquiry():
-    if request.method == "OPTIONS":
-        return jsonify({"status": "OK"}), 200
-
-    data = request.get_json()
-    name = data.get("name")
-    phone = data.get("phone")
-    email = data.get("email")
-    message = data.get("message")
-
-    sender_email = "24mcajai005@ldce.ac.in"
-    yag = yagmail.SMTP(user=sender_email, password=app_password)
-
+def send_async_email(name, phone, email, message):
     try:
+        sender_email = "24mcajai005@ldce.ac.in"
+        yag = yagmail.SMTP(user=sender_email, password=app_password)
+
         contents = [
             f"""
             <strong>Name</strong>: {name}<br>
@@ -38,10 +31,24 @@ def send_inquiry():
             subject="Inquiry from portfolio.",
             contents=contents
         )
-        return jsonify({"success": True, "message": "Inquiry sent successfully."})
+        print("Email sent successfully")
     except Exception as e:
-        return jsonify({"success": False, "message": str(e)}), 500
+        print(f"Failed to send email: {e}")
 
+@app.route("/send_inquiry", methods=["POST"])
+def send_inquiry():
+    data = request.get_json()
+    name = data.get("name")
+    phone = data.get("phone")
+    email = data.get("email")
+    message = data.get("message")
+
+    # Start email sending in a background thread
+    thread = threading.Thread(target=send_async_email, args=(name, phone, email, message))
+    thread.start()
+
+    # Return immediate success response
+    return jsonify({"success": True, "message": "Inquiry received. We will get back to you soon."}), 200
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

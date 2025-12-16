@@ -1,4 +1,5 @@
 Flask
 yagmail
 gunicorn
-dotenv
+python-dotenv
+flask-cors
